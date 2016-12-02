@@ -58,8 +58,8 @@ gem 'rails-assets-tether', '~> 1.1'
 #gem 'rails-i18n', '~> 5.0'
 gem 'carrierwave', '~> 0.11.2'
 gem 'mini_magick', '~> 4.5'
-#gem 'ckeditor', '~> 4.2' 
-gem 'trix', '~> 0.9.10'
+gem 'ckeditor', '~> 4.2' 
+#gem 'trix', '~> 0.9.10'
 gem 'ancestry'
 group :development do
   gem "better_errors"
