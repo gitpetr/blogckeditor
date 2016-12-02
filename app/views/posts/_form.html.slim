@@ -1,0 +1,13 @@
+= simple_form_for(@post, html: { multipart: true }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :body
+    = f.input :image
+    = f.input :category_id
+
+  .form-actions
+    = f.submit t('.submit', action: @post.new_record? ? 'Создать' : 'Изменить'), class: 'btn btn-primary'
+    | &nbsp; &nbsp; &nbsp;
+    = link_to t('common.back'), :back, class: 'btn btn-default'

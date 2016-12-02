@@ -1,0 +1,14 @@
+article.post
+  section.post-head
+    h1= @post.title 
+    small
+      time='  @post.created_at.to_date.strftime("%d %B, %Y")
+      ' | 
+      =' link_to 'Изменить', edit_post_path(@post)
+      ' | 
+      = link_to 'Удалить', @post, method: :delete, data: { confirm: "Удалить насовсем?"}
+  section.post-body.clearfix
+    = image_tag(@post.image_url(:large), class: 'img-show' ) if @post.image?
+    = raw(@post.body.html_safe)
+
+     
