@@ -64,3 +64,6 @@ gem 'ancestry'
 group :development do
   gem "better_errors"
 end
+
+gem 'will_paginate', '~> 3.1'
+gem 'will_paginate-bootstrap', '~> 1.0'

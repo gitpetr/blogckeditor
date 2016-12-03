@@ -72,3 +72,14 @@ article.post
 # config/application.rb
     config.time_zone = 'Asia/Omsk'
     config.i18n.default_locale = :ru
+
+###############################
+################################
+$ rails g scaffold tag name slug:string:uniq
+$  rails g model tagging post:belongs_to tag:belongs_to
+#Post
+  has_many :taggings
+  has_many :tags, through: :taggings
+#Tag
+  has_many :taggings
+  has_many :posts, through: :taggings

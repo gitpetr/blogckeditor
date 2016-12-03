@@ -11,4 +11,7 @@ article.post
     = image_tag(post.image_url(:thumb), class: 'img-thumbnail thumb' ) if post.image?
     = strip_tags(raw(post.body).truncate(580))
 
-     
+  section.footer-summary
+    = raw post.tags.map(&:name).map{ |t| link_to t, tag_path(t), class: 'tag tag-primary' }.join(' ')
+
+

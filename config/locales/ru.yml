@@ -22,6 +22,9 @@ ru:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Пожалуйста, ознакомьтесь с проблемами ниже:"
+  will_paginate:
+    previous_label: '&larr; Туда'
+    next_label: 'Сюда &rarr;'
   categories:
     index:
       title: 'Категории'
