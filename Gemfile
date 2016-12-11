@@ -63,7 +63,12 @@ gem 'ckeditor', '~> 4.2'
 gem 'ancestry'
 group :development do
   gem "better_errors"
+  gem 'sunspot_solr'
 end
 
 gem 'will_paginate', '~> 3.1'
 gem 'will_paginate-bootstrap', '~> 1.0'
+
+gem 'sunspot_rails', '~> 2.2'
+gem 'progress_bar'
+ 

@@ -11,6 +11,7 @@ class Post < ApplicationRecord
     end
   has_many :taggings
   has_many :tags, through: :taggings
+  belongs_to :category
   mount_uploader :image, ImageUploader
   validates :title, :body, presence: true
 
@@ -22,5 +23,9 @@ class Post < ApplicationRecord
     self.tags = names.split(',').map do |name|
       Tag.where(name: name.strip).first_or_create!
     end
+  end
+
+  searchable do
+    text :title, :body
   end
 end

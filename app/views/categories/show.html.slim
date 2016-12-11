@@ -1,0 +1,8 @@
+= render 'shared/breadcrumb', category: @category
+
+h1= @category.name
+
+section#posts
+= render @posts
+
+= will_paginate(@posts, renderer: BootstrapPagination::Rails)

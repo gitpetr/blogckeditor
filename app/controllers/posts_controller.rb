@@ -4,7 +4,15 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 2)
+    @posts = Post.paginate(page: params[:page], per_page: 5)
+    
+  end
+
+  def poisk
+     @query = Post.search do
+        fulltext(params[:search])
+    end
+    @posts = @query.results
   end
 
   # GET /posts/1
@@ -41,7 +49,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
-      if @post.update(post_params)
+      if @post.update_attributes(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else

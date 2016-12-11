@@ -33,11 +33,11 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+      <form class="navbar-form navbar-left" role="search" action='<%= poisk_posts_path %>'>
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+           <%= text_field_tag :search, params[:search], action: 'poisk'  %>
         </div>
-        <button type="submit" class="btn btn-default">Отправить</button>
+        <%= submit_tag "Отправить",:name => nil, :class => "button postfix" %>
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="<%= new_post_path %>">Новая статья</a></li>
@@ -54,4 +54,17 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
+</nav>
+
+            
+
+<nav class="nav">
+ <ul class="nav nav-tabs">
+ <% Category.order(:name).roots.each do |category| %>
+        <li <%= 'active' if current_page?(category_path(category)) %>">
+              <%= link_to category.name, category, class: 'nav-link' %>
+               </li>
+          <% end %>
+               
+</ul>
 </nav>

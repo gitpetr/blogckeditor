@@ -12,9 +12,20 @@
   }
 
 .nested_nav  {
-  margin-left: 1em;
+  margin: 0 0 0 1em ; 
+  font-size: 80%;
 }
 
 .tag_cloud  {
+
   margin-top: 2em;
+}
+
+.nav-stacked > li.nav-item {
+ 
+  font-size: 25px;
+}
+
+.active{
+  background-color: cyan;
 }
